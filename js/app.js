@@ -152,8 +152,7 @@ App.ExerciseView = Ember.View.extend({
             var gyroX = new Array();
             var gyroY = new Array();
             var gyroZ = new Array();
-            
-            var oefening1couter = 0;
+
             // Put all data in new arrays for the graph
             data.forEach(function(element, index){
                 pitch.push(parseFloat(element.get('pitch')) );
@@ -164,11 +163,6 @@ App.ExerciseView = Ember.View.extend({
                 accelY.push(parseFloat(element.get('accely')) );
                 accelZ.push(parseFloat(element.get('accelz')) );
                 
-                // Check for motion, an example for our project
-                if (parseFloat(Math.round(parseFloat(element.get('gyroy')))) > 3) {
-                    oefening1couter = oefening1couter + 1;
-                    $("#counter").html(oefening1couter);
-                }
                 gyroX.push(parseFloat(element.get('gyrox')) );
                 gyroY.push(parseFloat(element.get('gyroy')) );
                 gyroZ.push(parseFloat(element.get('gyroz')) );                
